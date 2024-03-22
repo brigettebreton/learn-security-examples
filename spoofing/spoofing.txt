@@ -1,1 +1,11 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+The issue with the provided code lies in its failure to adequately verify the user's 
+identity before allowing access to confidential data. Within the /sensitive route, the 
+code verifies if req.session.user matches 'Admin' and, if true, assigns 
+req.session.sensitive as 'supersecret' and sends a success message. However, there's a 
+lack of a robust authentication mechanism to verify that the user is genuinely the admin.
+
+This flaw could be exploited by an attacker who manipulates req.session.user to 'Admin' 
+without authenticating as the admin. Consequently, unauthorized users could access 
+sensitive data.
