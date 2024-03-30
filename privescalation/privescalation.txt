@@ -1,0 +1,13 @@
+- Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+The insecure code allows any user to change the role of another user by manipulating the 
+input, leading to potential privilege escalation vulnerabilities. Conversely, the secure 
+version stores user IDs in sessions and verifies if the user has admin privileges before 
+allowing role edits, thus preventing unauthorized role changes and privilege manipulation.
+
+- What additional security mechanisms can you incorporate to prevent such attacks?
+
+Additional security measures can include implementing 2FA for user identity verification 
+and incorporating role-based privilege checks in the code to prevent unauthorized role 
+changes and privilege escalation. These steps help ensure that only authorized users with 
+appropriate credentials can access privileged actions.
